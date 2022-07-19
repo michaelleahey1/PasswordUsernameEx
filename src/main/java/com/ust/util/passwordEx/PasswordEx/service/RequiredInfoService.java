@@ -34,6 +34,6 @@ public class RequiredInfoService {
         return requiredInfoDao.queryRequiredInfos();
     }
     public Optional<RequiredInfo> queryRequiredInfo(int uid) {
-        return requiredInfoDao.queryRequiredInfo(uid);
+        return requiredInfoDao.queryRequiredInfo(uid);//may return null
     }
 }

@@ -15,7 +15,7 @@ import java.util.Optional;
 public class RequiredInfoRepository implements RequiredInfoDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    private static final List<RequiredInfo> user = new ArrayList<>();
+    //private static final List<RequiredInfo> user = new ArrayList<>();
 
     @Override
     public int insertRequiredInfo(int uid, RequiredInfo requiredInfo) {
@@ -26,9 +26,9 @@ public class RequiredInfoRepository implements RequiredInfoDao {
 
     @Override
     public int updateRequiredInfo(int uid, RequiredInfo requiredInfo) {
-        String sql="UPDATE INTO REQUIREDINFOS (username,requiredInfo)VALUES(?,?)";
+        String sql="UPDATE REQUIREDINFOS set username=?,pword=? where uid=?";
         return jdbcTemplate.update(sql,
-                new Object[]{requiredInfo.getUid(), requiredInfo.getUsername(), requiredInfo.getPword()});
+                new Object[]{requiredInfo.getUsername(), requiredInfo.getPword(),requiredInfo.getUid()});
     }
 
     @Override
@@ -54,7 +54,7 @@ public class RequiredInfoRepository implements RequiredInfoDao {
                     BeanPropertyRowMapper.newInstance(RequiredInfo.class), uid);
             return Optional.ofNullable(requiredInfo);
         } catch (IncorrectResultSizeDataAccessException e) {
-            return Optional.ofNullable(requiredInfo);
+            return Optional.ofNullable(null);
         }
     }
 }

@@ -36,6 +36,7 @@ public class RequiredInfoController {
             return requiredInfoService.deleteRequiredInfo(uid);
         }
 
+
     @PutMapping(value="{uid}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public int updateRequiredInfo(@PathVariable("uid") int uid, @RequestBody RequiredInfo requiredInfo){
         return requiredInfoService.updateRequiredInfo(uid,requiredInfo);
