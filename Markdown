@@ -2,3 +2,4 @@ Required Info was used to show the front end this information is needed.
 Watch curley braces in your get command you don't need curley braces in controller line 35.
 Also Password is a reserved term in SQL it needs to be pword.
 Front end git@github.com:michaelleahey1/PasswordFronEndEx.git
+Optionals help prevent a null pointer exception
