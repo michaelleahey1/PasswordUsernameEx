@@ -1,5 +1,10 @@
 Required Info was used to show the front end this information is needed.
 Watch curley braces in your get command you don't need curley braces in controller line 35.
 Also Password is a reserved term in SQL it needs to be pword.
+
+front end link
 Front end git@github.com:michaelleahey1/PasswordFronEndEx.git
 Optionals help prevent a null pointer exception
+
+commit on SQL - is for multiple SQL statements it insures either all transactions are done or
+none of the transactions are done. it helps with synchronizations.
